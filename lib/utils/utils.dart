@@ -26,5 +26,10 @@ class Utils {
    )..show(context),
    ) ;
 }
+
+static fieldFocus(BuildContext context,FocusNode current , FocusNode next ){
+  current.unfocus();
+ FocusScope.of(context).requestFocus(next);
+}
 }
 
