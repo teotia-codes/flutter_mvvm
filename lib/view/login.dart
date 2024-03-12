@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mvvm/utils/utils.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -9,17 +8,40 @@ class LoginScreen extends StatefulWidget {
 }
 
 class  LoginScreenState extends State <LoginScreen> {
+ TextEditingController email = TextEditingController();
+ TextEditingController pass = TextEditingController();
+ 
   @override
   Widget build(BuildContext context) {
 return Scaffold(
   body: Column(
     mainAxisAlignment: MainAxisAlignment.center,
 children: [
-  InkWell(
-    onTap: () {
-      Utils.flushBarErrorMessage('Error occured', context);
-    },
-    child:const Center(child: Text("Click ME")),
+  Padding(
+    padding: const EdgeInsets.all(30.0),
+    child: TextFormField(
+      controller: email,
+      decoration: const InputDecoration(
+        contentPadding: EdgeInsets.all(16),
+        labelText: "Email",
+        focusColor: Colors.black,
+        prefixIcon: Icon(Icons.email_outlined)
+    
+      ),
+    ),
+  ),
+  
+  Padding(
+    padding: const EdgeInsets.all(30.0),
+    child: TextFormField(
+      controller: email,
+      decoration: const  InputDecoration(
+        labelText: "Password",
+        focusColor: Colors.black,
+        prefixIcon: Icon(Icons.password_rounded)
+    
+      ),
+    ),
   )
 ],
   ),
