@@ -59,7 +59,7 @@ children: [
         decoration:  InputDecoration(
           labelText: "Password",
           focusColor: Colors.black,
-          prefixIcon: Icon(Icons.lock_outline),
+          prefixIcon: const Icon(Icons.lock_outline),
           suffixIcon: InkWell(
             onTap: (){
               obscureText.value = !obscureText.value;
@@ -85,7 +85,16 @@ else if(pass.text.length <6){
   Utils.flushBarErrorMessage('Please enter 6 digit pass', context);
 }
 else{
-  
+  ElevatedButton(onPressed: () {}, child: Container(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(6),
+      color: Colors.black
+    ),
+    child:const  Text(
+"MBA - CHAIWALA"
+    ),
+    
+  ));
 }
 })
 
